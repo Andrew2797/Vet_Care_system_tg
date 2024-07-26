@@ -1,4 +1,4 @@
-from os import getenv
+from os import getenv, name
 import asyncio
 
 from dotenv import load_dotenv
