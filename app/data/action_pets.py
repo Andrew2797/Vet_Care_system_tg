@@ -25,7 +25,7 @@ def healed_pet(pet_index: int) -> str:
         json.dump(pets, file)
 
     with open(list_files.HEALED_PETS, "w", encoding="utf-8") as file:
-        json.dump(HEALED_PETS, file)
+        json.dump(list_files.HEALED_PETS, file)
 
     msg = f"Тваринка '{pet}' успішно вилікувано. Дякую що обрали нас."
     return msg
