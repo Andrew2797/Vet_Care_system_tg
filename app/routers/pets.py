@@ -53,7 +53,7 @@ async def remove_pet(call_back: CallbackQuery, state: FSMContext):
 @pet_router.callback_query(F.data.startswith("healed_pet_"))
 async def healed_pet(call_back: CallbackQuery, state: FSMContext):
     pet_index = int(call_back.data.split("_")[-1])
-    msg = action_pets.healed_pet_pet(pet_index)
+    msg = action_pets.healed_pet_get(pet_index)
     await edit_or_answer(
         message=call_back.message,
         text=msg
