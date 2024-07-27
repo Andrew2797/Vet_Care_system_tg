@@ -17,7 +17,7 @@ async def edit_or_answer(message: Message, text: str, keyboard=None, *args, **kw
        await message.answer(text=text, reply_markup=keyboard, **kwargs)
 
 
-@pet_router.message(F.text == "Список тваринок")
+@pet_router.message(F.text == "Список тваринок на лікуванні")
 async def show_pets(message: Message, state: FSMContext):
     pets = open_files.get_pets()
     keyboard = build_pets_keyboard(pets)
@@ -70,7 +70,7 @@ async def shoe_healed_pet(message: Message, state: FSMContext):
     await message.answer(text=msg)
 
 
-@pet_router.message(F.text == "Додати нову тваринку")
+@pet_router.message(F.text == "Зарахувати нову тваринку на лікування")
 async def add_pet(message: Message, state: FSMContext):
     await state.clear()
     await state.set_state(PetForm.name)
