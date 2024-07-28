@@ -18,14 +18,14 @@ def healed_pet(pet_index: int) -> str:
     pets = open_files.pet()
     pet = pets.pop(pet_index)
 
-    healed_pet = open_files.get_healed_pet()
-    healed_pet.append(pet)
+    healed_pets = open_files.get_healed_pets()
+    healed_pets.append(pet)
 
     with open(list_files.PETS, "w", encoding="utf-8") as file:
         json.dump(pets, file)
 
     with open(list_files.HEALED_PETS, "w", encoding="utf-8") as file:
-        json.dump(list_files.HEALED_PETS, file)
+        json.dump(healed_pets, file)
 
     msg = f"Тваринка '{pet}' успішно вилікувано. Дякую що обрали нас."
     return msg
