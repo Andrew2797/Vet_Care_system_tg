@@ -7,7 +7,7 @@ def remove_pet(pet_index: int) -> str:
     pets = open_files.get_pet()
     pet = pets.pop(pet_index)
 
-    with open(list_files.PET, "w", encoding="utf-8") as file:
+    with open(list_files.PETS, "w", encoding="utf-8") as file:
         json.dump(pets, file)
 
     msg = f"Тваринку '{pet}' було успішно забрано."
