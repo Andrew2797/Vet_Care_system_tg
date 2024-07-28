@@ -4,7 +4,7 @@ from app.data import list_files, open_files
 
 
 def remove_pet(pet_index: int) -> str:
-    pets = open_files.get_pet()
+    pets = open_files.get_pets()
     pet = pets.pop(pet_index)
 
     with open(list_files.PETS, "w", encoding="utf-8") as file:
@@ -15,7 +15,7 @@ def remove_pet(pet_index: int) -> str:
 
 
 def healed_pet(pet_index: int) -> str:
-    pets = open_files.pet()
+    pets = open_files.get_pets()
     pet = pets.pop(pet_index)
 
     healed_pets = open_files.get_healed_pets()
